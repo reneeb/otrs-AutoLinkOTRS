@@ -1,0 +1,22 @@
+=head1 NAME
+
+AutoLinkOTRS - create links to ticket zoom in articles
+
+=head1 DESCRIPTION
+
+This module checks the articles texts for a valid ticket number (e.g. "Ticket#20151015010001") and
+creates a link to that ticket. It respects the settings for C<Ticket::Hook> and C<Ticket::HookDivider>.
+
+=head1 BUGTRACKER AND REPOSITORY
+
+The bugtracker and the code repository can be found at L<https://github.com/reneeb/otrs-AutoLinkOTRS>.
+
+=head1 AUTHOR AND LICENSE
+
+This package was written by Renee Baecker E<lt>otrs@perl-services.deE<gt>.
+
+The package is licensed unter AGPL. If you
+did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
+
+=cut
+
