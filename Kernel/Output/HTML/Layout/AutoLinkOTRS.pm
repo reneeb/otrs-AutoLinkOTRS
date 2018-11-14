@@ -43,8 +43,9 @@ sub Kernel::Output::HTML::Layout::ArticlePreview {
     my $URL = sprintf '<a href="%sAction=AgentTicketZoom;TicketID=%%s;%s">%%s</a>',
         $Self->{Baselink}, $Session;
 
+    my $Regex = $ConfigObject->Get('AutoLinkOTRS::TicketNumberRegex') || '\d+';
     $Preview =~ s{
-        (\Q$Hook$Divider\E(\d+))
+        (\Q$Hook$Divider\E($Regex))
     }{
         my $URL = $Self->_BuildTicketURL( $URL, $1, $2 );
         $URL ? $URL : $1;

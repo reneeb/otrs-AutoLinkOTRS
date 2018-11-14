@@ -7,4 +7,11 @@
             <Item ValueType="Checkbox">1</Item>
         </Value>
     </Setting>
+    <Setting Name="AutoLinkOTRS::TicketNumberRegex" Required="0" Valid="1">
+        <Description Translatable="1">Regex to find the part after the Ticket::Hook thing.</Description>
+        <Navigation>Frontend::Base</Navigation>
+        <Value>
+            <Item ValueType="String">\d+</Item>
+        </Value>
+    </Setting>
 </otrs_config>
