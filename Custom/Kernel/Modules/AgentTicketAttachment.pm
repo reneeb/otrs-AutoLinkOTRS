@@ -1,6 +1,6 @@
 # --
 # Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
-# Changes Copyright (C) 2015-2017 Perl-Services.de, http://perl-services.de
+# Changes Copyright (C) 2015-2018 Perl-Services.de, http://perl-services.de
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -247,8 +247,10 @@ sub Run {
             my $URL = sprintf '<a href="%sAction=AgentTicketZoom;TicketID=%%s;%s">%%s</a>',
                 $LayoutObject->{Baselink}, $Session;
 
+            my $Regex = $ConfigObject->Get('AutoLinkOTRS::TicketNumberRegex') || '\d+';
+
             $Data{Content} =~ s{
-                (\Q$Hook$Divider\E(\d+))
+                (\Q$Hook$Divider\E($Regex))
             }{
                 my $URL = $Self->_BuildTicketURL( $URL, $1, $2 );
                 $URL ? $URL : $1;
